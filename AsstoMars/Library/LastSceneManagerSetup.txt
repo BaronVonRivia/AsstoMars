@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/UGame.unity
+- path: Assets/AsstoMars.unity
   isLoaded: 1
   isActive: 1

@@ -8,6 +8,7 @@
 # done character (Rocco)
 # done shooting (Rocco)
 # done bullet trail (Jason)
+# done walkable foreground (Jason)
 # add animation
 # add music
 # add enemies

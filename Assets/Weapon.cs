@@ -27,6 +27,7 @@ public class Weapon : MonoBehaviour {
 		if (fireRate == 0) {
 			if (Input.GetButtonDown ("Fire1")) {
 				Shoot ();
+
 			}
 		}
 		else {

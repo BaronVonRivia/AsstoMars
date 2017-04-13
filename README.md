@@ -9,7 +9,7 @@
 # done shooting (Rocco)
 # done bullet trail (Jason)
 # done walkable foreground (Jason)
-# add animation
+# done animation (Rocco)
 # add music
 # add enemies
 # 

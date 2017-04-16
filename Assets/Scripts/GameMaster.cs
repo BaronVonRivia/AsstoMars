@@ -18,7 +18,6 @@ public class GameMaster : MonoBehaviour {
 	public float spawnDelay = 2f;
 	public Transform spawnPrefab;
 
-
 	public IEnumerator RespawnPlayer () {
 		AudioSource.PlayClipAtPoint (respawnAudio, new Vector3 (spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z), 0.5f);
 		yield return new WaitForSeconds (spawnDelay);
@@ -27,10 +26,20 @@ public class GameMaster : MonoBehaviour {
 		Transform clone = Instantiate (spawnPrefab, spawnPoint.position, spawnPoint.rotation);
 		Destroy (clone.gameObject, 3f);
 	}
+		
 
 	public static void KillPlayer (Player player) {
 		Destroy (player.gameObject);
 		gm.StartCoroutine (gm.RespawnPlayer());
+
 	}
+
+	public static void KillEnemy (SEnemy enemy) {
+		Destroy (enemy.gameObject);
+	}	
+
+	public static void KillEnemy (Enemy enemy) {
+		Destroy (enemy.gameObject);
+	}	
 
 }

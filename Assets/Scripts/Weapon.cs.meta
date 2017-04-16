@@ -1,10 +1,15 @@
 fileFormatVersion: 2
 guid: 843fa77f70eecc14a9e248d11fc8d0a9
-timeCreated: 1491089724
+timeCreated: 1492226786
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - gunAudio: {fileID: 8300000, guid: 2196d4f761247f14cade8db77143c21a, type: 3}
+  - BulletTrailPrefab: {instanceID: 0}
+  - MuzzleFlashPrefab: {instanceID: 0}
+  - gunPrefab: {fileID: 4126269321170348, guid: aa8826995bfc6354496868d0f813c98f,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

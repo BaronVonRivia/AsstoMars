@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour {
 	public float fireRate = 0;
-	public float Damage = 10;
+	public int Damage = 10;
 	public LayerMask whatToHit;
+	public AudioClip gunAudio;
 
 	public Transform BulletTrailPrefab;
 	public Transform MuzzleFlashPrefab;
@@ -13,6 +14,8 @@ public class Weapon : MonoBehaviour {
 	public float effectSpawnRate = 10;
 	private float timeToFire = 0;
 	Transform firePoint;
+	public static GameMaster gm;
+	public Transform gunPrefab;
 
 	// Use this for initialization
 	void Awake () {
@@ -27,13 +30,14 @@ public class Weapon : MonoBehaviour {
 		if (fireRate == 0) {
 			if (Input.GetButtonDown ("Fire1")) {
 				Shoot ();
-
+				AudioSource.PlayClipAtPoint (gunAudio, new Vector3 (gunPrefab.position.x, gunPrefab.position.y, gunPrefab.position.z), 1f);
 			}
 		}
 		else {
 			if(Input.GetButton("Fire1") && Time.time > timeToFire){
 				timeToFire = Time.time + 1 / fireRate;
 				Shoot ();
+				AudioSource.PlayClipAtPoint (gunAudio, new Vector3 (gunPrefab.position.x, gunPrefab.position.y, gunPrefab.position.z), 1f);
 			}
 		}
 	}
@@ -50,6 +54,15 @@ public class Weapon : MonoBehaviour {
 		if (hit.collider != null) {
 			Debug.DrawLine (firePointPosition, hit.point, Color.red);
 			Debug.Log ("We hit " + hit.collider.name + " and did " + Damage + " damage.");
+			SEnemy senemy = hit.collider.GetComponent<SEnemy>();
+			Enemy enemy = hit.collider.GetComponent<Enemy>();
+			if (senemy != null) {
+				senemy.DamageSEnemy(Damage);
+				Debug.Log ("We hit " + hit.collider.name + " and did " + Damage + " damage.");
+			} else if (enemy != null) {
+				enemy.DamageEnemy(Damage);
+				Debug.Log ("We hit " + hit.collider.name + " and did " + Damage + " damage.");
+			}
 		}
 	}
 

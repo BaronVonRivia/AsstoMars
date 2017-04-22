@@ -5,6 +5,7 @@ using Pathfinding;
 [RequireComponent(typeof (Rigidbody2D))]
 [RequireComponent(typeof (Seeker))]
 public class EnemyAI : MonoBehaviour {
+	public static GameMaster gm;
 	//What to chace?
 	public Transform target;
 
@@ -30,6 +31,8 @@ public class EnemyAI : MonoBehaviour {
 	private bool searchingForPlayer = false;
 
 	void Start(){
+		gm = FindObjectOfType<GameMaster> ();
+		//GameObject go = GameObject.FindGameObjectWithTag("Player");
 		seeker = GetComponent<Seeker> ();
 		rb = GetComponent<Rigidbody2D> ();
 
@@ -121,6 +124,14 @@ public class EnemyAI : MonoBehaviour {
 			return;
 		}
 
+	}
+
+	void OnTriggerEnter2D (Collider2D other) {
+		if (other.tag == "Player") {
+			Destroy (other.gameObject);
+			gm.StartCoroutine (gm.RespawnPlayer ());
+
+		}
 	}
 
 }

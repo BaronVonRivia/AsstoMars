@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SEnemy : MonoBehaviour {
 	public static GameMaster gm;
-	public Transform playerPrefab;
 	public Transform target;
 	public float moveSpeed;
 	public float rotationSpeed;
@@ -18,11 +17,13 @@ public class SEnemy : MonoBehaviour {
 
 	public SEnemyStats senemyStats = new SEnemyStats ();
 
+	public Transform deathParticles;
+
 
 	public void DamageSEnemy (int damage) {
 		senemyStats.Health -= damage;
 		if (senemyStats.Health <= 0) {
-			GameMaster.KillEnemy (this);
+			GameMaster.KillSEnemy (this);
 		}
 	}
 
@@ -60,6 +61,9 @@ public class SEnemy : MonoBehaviour {
 		gm = FindObjectOfType<GameMaster> ();
 		GameObject go = GameObject.FindGameObjectWithTag("Player");
 		target = go.transform;
+		if(deathParticles == null) {
+			Debug.LogError ("No death particles reffernce on enemy!");
+		}
 		if (target == null) {
 			if(!searchingForPlayer) {
 				searchingForPlayer = true;
@@ -94,7 +98,7 @@ public class SEnemy : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other) {
 			if (other.tag == "Player") {
 				Destroy (other.gameObject);
-				gm.StartCoroutine (gm.RespawnPlayer ());
+				gm.StartCoroutine (gm._RespawnPlayer ());
 
 		}
 	}

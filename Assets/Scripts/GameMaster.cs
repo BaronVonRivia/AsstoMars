@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class GameMaster : MonoBehaviour {
 
+	public GameObject currentCheckpoint;
 	public AudioClip respawnAudio;
 	public static GameMaster gm;
+	private Player player;				// player class call
 
 	void Start () {
 		if (gm == null) {
@@ -22,9 +24,10 @@ public class GameMaster : MonoBehaviour {
 		AudioSource.PlayClipAtPoint (respawnAudio, new Vector3 (spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z), 0.5f);
 		yield return new WaitForSeconds (spawnDelay);
 
-		Instantiate (playerPrefab, spawnPoint.position, spawnPoint.rotation);
-		Transform clone = Instantiate (spawnPrefab, spawnPoint.position, spawnPoint.rotation);
+		Instantiate (playerPrefab, currentCheckpoint.transform.position, currentCheckpoint.transform.rotation);
+		Transform clone = Instantiate (spawnPrefab, currentCheckpoint.transform.position, currentCheckpoint.transform.rotation);
 		Destroy (clone.gameObject, 1f);
+		//player.transform.position = currentCheckpoint.transform.position;	// allows checkpoint system
 	}
 
 	public static void KillPlayer (Player player) {
@@ -42,7 +45,8 @@ public class GameMaster : MonoBehaviour {
 	}	
 
 	public void _KillEnemy(Enemy _enemy) {
-		Instantiate (_enemy.deathParticles, _enemy.transform.position, Quaternion.identity);
+		Transform _clone = Instantiate (_enemy.deathParticles, _enemy.transform.position, Quaternion.identity);
+		Destroy (_clone.gameObject, 5f);
 		Destroy (_enemy.gameObject);
 	}
 

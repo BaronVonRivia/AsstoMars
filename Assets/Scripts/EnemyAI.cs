@@ -6,11 +6,7 @@ using Pathfinding;
 [RequireComponent(typeof (Seeker))]
 public class EnemyAI : MonoBehaviour {
 	public static GameMaster gm;
-<<<<<<< HEAD
 	//What to chase?
-=======
-	//What to chace?
->>>>>>> test
 	public Transform target;
 
 	//How many times each second we will update our path
@@ -145,7 +141,6 @@ public class EnemyAI : MonoBehaviour {
 //
 //		}
 //	}
-<<<<<<< HEAD
 //	private void Flip(float horizontal){
 //		if (horizontal > 0 && !facingLeft || horizontal < 0 && facingLeft) {
 //			facingLeft = !facingLeft;
@@ -154,7 +149,4 @@ public class EnemyAI : MonoBehaviour {
 //			transform.localScale = theScale;
 //		}
 //	}
-=======
-
->>>>>>> test
 }

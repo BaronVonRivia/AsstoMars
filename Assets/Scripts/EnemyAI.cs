@@ -6,7 +6,7 @@ using Pathfinding;
 [RequireComponent(typeof (Seeker))]
 public class EnemyAI : MonoBehaviour {
 	public static GameMaster gm;
-	//What to chace?
+	//What to chase?
 	public Transform target;
 
 	//How many times each second we will update our path
@@ -25,10 +25,13 @@ public class EnemyAI : MonoBehaviour {
 	public bool pathIsEnded = false;
 	//The max dist from the AI to a waypoiunt for it to continue to the next waypoint
 	public float nextWaypointDistance = 3;
-	// The waypoint we are currntly moving towards
+	// The waypoint we are currently moving towards
 	private int currentWayPoint = 0;
 
 	private bool searchingForPlayer = false;
+
+	private bool facingLeft;
+
 
 	void Start(){
 		gm = FindObjectOfType<GameMaster> ();
@@ -43,6 +46,9 @@ public class EnemyAI : MonoBehaviour {
 			}
 			return;
 		}
+
+		facingLeft = true;
+
 		// Start a new path to the target position, return the result to the OnPathComplete method
 		seeker.StartPath (transform.position, target.position, OnPathComplete);
 
@@ -95,9 +101,9 @@ public class EnemyAI : MonoBehaviour {
 			}
 			return;
 		}
+		//
 
-		//TODO: Always look at player
-
+		//
 		if (path == null)
 			return;
 
@@ -123,6 +129,8 @@ public class EnemyAI : MonoBehaviour {
 			currentWayPoint++;
 			return;
 		}
+//		float horizontal = Input.GetAxis ("Horizontal");
+//		Flip(horizontal);
 
 	}
 
@@ -133,5 +141,12 @@ public class EnemyAI : MonoBehaviour {
 //
 //		}
 //	}
-
+//	private void Flip(float horizontal){
+//		if (horizontal > 0 && !facingLeft || horizontal < 0 && facingLeft) {
+//			facingLeft = !facingLeft;
+//			Vector3 theScale = transform.localScale;
+//			theScale.x *= -1;
+//			transform.localScale = theScale;
+//		}
+//	}
 }

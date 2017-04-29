@@ -30,7 +30,7 @@ public class SEnemy : MonoBehaviour {
 	IEnumerator SearchForPlayer() {
 		GameObject sResult = GameObject.FindWithTag ("Player"); {
 			if(sResult == null) {
-				yield return new WaitForSeconds (0.5f);
+				yield return new WaitForSeconds (1f);
 				StartCoroutine (SearchForPlayer ());
 			} else {
 				target = sResult.transform;
@@ -48,7 +48,7 @@ public class SEnemy : MonoBehaviour {
 			}
 		}
 
-		yield return new WaitForSeconds (1f / updateRate);
+		yield return new WaitForSeconds (0.5f / updateRate);
 		StartCoroutine (UpdatePath ());
 	}
 

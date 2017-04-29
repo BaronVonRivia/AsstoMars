@@ -21,7 +21,11 @@ TagManager:
   - Ground
   - Projectiles
   - CheckPoints
+<<<<<<< HEAD
   - 
+=======
+  - TriggerZone
+>>>>>>> test
   - 
   - 
   - 

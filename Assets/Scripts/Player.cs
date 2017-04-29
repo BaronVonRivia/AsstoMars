@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
 	[System.Serializable]
 	public class PlayerStats {
 		public int maxHealth = 100;
+<<<<<<< HEAD
 
 		private int _curHealth;
 		public int curHealth
@@ -21,7 +22,23 @@ public class Player : MonoBehaviour {
 	}
 
 	public PlayerStats stats = new PlayerStats ();
+=======
 
+		private int _curHealth;
+		public int curHealth
+		{
+			get { return _curHealth; }
+			set { _curHealth = Mathf.Clamp(value, 0, maxHealth); }
+		}
+>>>>>>> test
+
+		public void Init() {
+			curHealth = maxHealth;
+		}
+	}
+
+	public PlayerStats stats = new PlayerStats ();
+	public Transform deathParticles;
 	public int fallBoundary = -20;
 
 	[SerializeField]

@@ -1093,6 +1093,7 @@ MonoBehaviour:
   lookAheadReturnSpeed: 0.5
   lookAheadMoveThreshold: 0.1
   yPosRestriction: -1
+<<<<<<< HEAD
 --- !u!1 &968463616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,6 +1126,8 @@ Transform:
   m_Father: {fileID: 196772849}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> test
 --- !u!1 &1062849308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,6 +1198,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2786c13e9ddc3f64abfac9b1c664b160, type: 2}
   m_IsPrefabParent: 0
+<<<<<<< HEAD
 --- !u!1 &1371387291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,6 +1229,8 @@ Transform:
   m_Father: {fileID: 196772849}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> test
 --- !u!1 &1493500661
 GameObject:
   m_ObjectHideFlags: 0

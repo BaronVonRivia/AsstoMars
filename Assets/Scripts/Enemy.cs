@@ -10,6 +10,15 @@ public class Enemy : MonoBehaviour {
 	}
 
 	public EnemyStats stats = new EnemyStats();
+	public Transform deathParticles;
+
+	void Start() {
+		if(deathParticles == null) {
+			Debug.LogError ("No death particles reffernce on enemy!");
+		}
+	}
+
+	public int damage = 40;
 
 	public void DamageEnemy (int damage) {
 		stats.Health -= damage;
@@ -18,5 +27,12 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionEnter2D(Collision2D _colInfo) {
+		Player _player = _colInfo.collider.GetComponent<Player> ();
+		if(_player != null) {
+			_player.DamagePlayer (damage);
+			DamageEnemy (999999);
+		}
+	}
 }
 

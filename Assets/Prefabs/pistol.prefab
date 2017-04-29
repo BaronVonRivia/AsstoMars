@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 114732900080011764}
   m_Layer: 8
   m_Name: pistol
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,6 +89,7 @@ MonoBehaviour:
   gunAudio: {fileID: 8300000, guid: 2196d4f761247f14cade8db77143c21a, type: 3}
   BulletTrailPrefab: {fileID: 4391219036931608, guid: 055b897d20c88b84f9eab7605632e7ac,
     type: 2}
+  HitPrefab: {fileID: 4311235351969714, guid: 025802187bf170f4f9f372dc17ab133b, type: 2}
   MuzzleFlashPrefab: {fileID: 4623384634600402, guid: de7ff360787750c418ee71e996aa9eb5,
     type: 2}
   effectSpawnRate: 10

@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 58243160855081740}
   - component: {fileID: 95297359714754016}
   - component: {fileID: 114640625815525708}
+  - component: {fileID: 58121647455750618}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -66,6 +67,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &58121647455750618
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1814539710571686}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 10.85
 --- !u!58 &58243160855081740
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -152,6 +167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f79e3d9e5f99d4ca9ab88ad39104f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats:
+    Health: 100
+  deathParticles: {fileID: 4112568055860142, guid: 3f87debe00995fd4cab409540f68e55a,
+    type: 2}
+  damage: 40
 --- !u!212 &212207727310231984
 SpriteRenderer:
   m_ObjectHideFlags: 1

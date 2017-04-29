@@ -18,10 +18,10 @@ TagManager:
   - Player
   - Background
   - Obstacle
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Projectiles
+  - CheckPoints
+  - TriggerZone
   - 
   - 
   - 

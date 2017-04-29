@@ -522,6 +522,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     maxHealth: 100
+  deathParticles: {fileID: 4039987635761240, guid: e0edd746442e0ec41bc170c935fec93d,
+    type: 2}
   fallBoundary: -20
   statusIndicator: {fileID: 114726061249698570}
 --- !u!114 &114813570207950302
@@ -721,7 +723,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.13999939, y: -5.8}
+  m_AnchoredPosition: {x: 0.13999939, y: -4.9}
   m_SizeDelta: {x: -0.3, y: 12.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224226587402609664
@@ -741,7 +743,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.03, y: 1.325}
+  m_AnchoredPosition: {x: -0.03, y: 1.325}
   m_SizeDelta: {x: 75, y: 17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224562943958379352

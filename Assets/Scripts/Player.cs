@@ -21,7 +21,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public PlayerStats stats = new PlayerStats ();
-
+	public Transform deathParticles;
 	public int fallBoundary = -20;
 
 	[SerializeField]

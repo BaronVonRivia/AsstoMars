@@ -21,19 +21,16 @@ public class GameMaster : MonoBehaviour {
 	public Transform spawnPrefab;
 
 	public IEnumerator _RespawnPlayer () {
-		AudioSource.PlayClipAtPoint (respawnAudio, new Vector3 (spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z), 0.5f);
 		yield return new WaitForSeconds (spawnDelay);
-
+		AudioSource.PlayClipAtPoint (respawnAudio, new Vector3 (spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z), 0.5f);
 		Instantiate (playerPrefab, currentCheckpoint.transform.position, currentCheckpoint.transform.rotation);
 		Transform clone = Instantiate (spawnPrefab, currentCheckpoint.transform.position, currentCheckpoint.transform.rotation);
 		Destroy (clone.gameObject, 1f);
-		//player.transform.position = currentCheckpoint.transform.position;	// allows checkpoint system
+		//player.transform.position = currentCheckpoint.transform.position;	
 	}
 
 	public static void KillPlayer (Player player) {
-		Destroy (player.gameObject);
-		gm.StartCoroutine (gm._RespawnPlayer());
-
+		gm._KillPlayer (player);
 	}
 
 	public static void KillSEnemy (SEnemy senemy) {
@@ -43,6 +40,13 @@ public class GameMaster : MonoBehaviour {
 	public static void KillEnemy (Enemy enemy) {
 		gm._KillEnemy (enemy);
 	}	
+
+	public void _KillPlayer(Player _player) {
+		Transform _clone = Instantiate (player.deathParticles, player.transform.position, Quaternion.identity);
+		Destroy (_clone.gameObject, 5f);
+		Destroy (player.gameObject);
+		gm.StartCoroutine (gm._RespawnPlayer());
+	}
 
 	public void _KillEnemy(Enemy _enemy) {
 		Transform _clone = Instantiate (_enemy.deathParticles, _enemy.transform.position, Quaternion.identity);

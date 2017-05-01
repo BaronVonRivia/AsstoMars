@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AcidTrip : MonoBehaviour {
 	public static GameMaster gm;
-	int damage = 999999;
 	// Use this for initialization
 	void Start () {
 		gm = FindObjectOfType<GameMaster> ();
@@ -19,7 +18,6 @@ public class AcidTrip : MonoBehaviour {
 		if (other.tag == "Player") {
 			Destroy (other.gameObject);
 			gm.StartCoroutine (gm._RespawnPlayer ());
-
 		}
 	}
 }

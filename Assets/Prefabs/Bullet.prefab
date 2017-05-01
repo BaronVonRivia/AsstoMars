@@ -20,10 +20,16 @@ GameObject:
   m_Component:
   - component: {fileID: 4166852804576676}
   - component: {fileID: 212700845329620704}
+<<<<<<< HEAD
   - component: {fileID: 50974430771232894}
   - component: {fileID: 114783197264294612}
   - component: {fileID: 58281965417808424}
   - component: {fileID: 58012131209688154}
+=======
+  - component: {fileID: 61658605389325580}
+  - component: {fileID: 50974430771232894}
+  - component: {fileID: 114783197264294612}
+>>>>>>> 6d30b5710e6d15d7dc58a8f50f715f55c13b302a
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -57,13 +63,19 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
+<<<<<<< HEAD
   m_AngularDrag: 1
   m_GravityScale: 0.5
+=======
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+>>>>>>> 6d30b5710e6d15d7dc58a8f50f715f55c13b302a
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+<<<<<<< HEAD
 --- !u!58 &58012131209688154
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -80,6 +92,10 @@ CircleCollider2D:
   m_Radius: 4.888889
 --- !u!58 &58281965417808424
 CircleCollider2D:
+=======
+--- !u!61 &61658605389325580
+BoxCollider2D:
+>>>>>>> 6d30b5710e6d15d7dc58a8f50f715f55c13b302a
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -91,7 +107,11 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 4.888889, y: 4.6666665}
   serializedVersion: 2
+<<<<<<< HEAD
   m_Radius: 4.888889
+=======
+  m_Size: {x: 9.777778, y: 9.333333}
+>>>>>>> 6d30b5710e6d15d7dc58a8f50f715f55c13b302a
 --- !u!114 &114783197264294612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,7 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68727d2c11ac84a498a949fc95a10fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   damage: 10
+=======
+>>>>>>> 6d30b5710e6d15d7dc58a8f50f715f55c13b302a
 --- !u!212 &212700845329620704
 SpriteRenderer:
   m_ObjectHideFlags: 1

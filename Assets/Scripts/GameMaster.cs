@@ -7,7 +7,7 @@ public class GameMaster : MonoBehaviour {
 	public GameObject currentCheckpoint;
 	public AudioClip respawnAudio;
 	public static GameMaster gm;
-	private Player player;				// player class call
+	//private Player player;				// player class call
 
 	void Start () {
 		if (gm == null) {
@@ -30,7 +30,8 @@ public class GameMaster : MonoBehaviour {
 	}
 
 	public static void KillPlayer (Player player) {
-		gm._KillPlayer (player);
+		Destroy (player.gameObject);
+		gm.StartCoroutine (gm._RespawnPlayer());
 	}
 
 	public static void KillSEnemy (SEnemy senemy) {
@@ -40,13 +41,6 @@ public class GameMaster : MonoBehaviour {
 	public static void KillEnemy (Enemy enemy) {
 		gm._KillEnemy (enemy);
 	}	
-
-	public void _KillPlayer(Player _player) {
-		Transform _clone = Instantiate (player.deathParticles, player.transform.position, Quaternion.identity);
-		Destroy (_clone.gameObject, 5f);
-		Destroy (player.gameObject);
-		gm.StartCoroutine (gm._RespawnPlayer());
-	}
 
 	public void _KillEnemy(Enemy _enemy) {
 		Transform _clone = Instantiate (_enemy.deathParticles, _enemy.transform.position, Quaternion.identity);

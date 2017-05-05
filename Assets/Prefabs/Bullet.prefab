@@ -22,8 +22,13 @@ GameObject:
   - component: {fileID: 212700845329620704}
   - component: {fileID: 50974430771232894}
   - component: {fileID: 114783197264294612}
+<<<<<<< HEAD
   - component: {fileID: 58026730640871758}
   - component: {fileID: 58900002748302420}
+=======
+  - component: {fileID: 58281965417808424}
+  - component: {fileID: 58012131209688154}
+>>>>>>> test
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -64,7 +69,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+<<<<<<< HEAD
 --- !u!58 &58026730640871758
+=======
+--- !u!58 &58012131209688154
+>>>>>>> test
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -77,8 +86,13 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 4.888889, y: 4.6666665}
   serializedVersion: 2
+<<<<<<< HEAD
   m_Radius: 1
 --- !u!58 &58900002748302420
+=======
+  m_Radius: 4.888889
+--- !u!58 &58281965417808424
+>>>>>>> test
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -87,11 +101,19 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+<<<<<<< HEAD
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 4.888889, y: 4.6666665}
   serializedVersion: 2
   m_Radius: 1
+=======
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 4.888889, y: 4.6666665}
+  serializedVersion: 2
+  m_Radius: 4.888889
+>>>>>>> test
 --- !u!114 &114783197264294612
 MonoBehaviour:
   m_ObjectHideFlags: 1

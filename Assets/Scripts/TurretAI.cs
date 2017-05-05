@@ -112,7 +112,7 @@ public class TurretAI : MonoBehaviour {
 
 				bulletTimer = 0;
 			}
-			if (attackingRight) {
+			else {
 				GameObject bulletClone;
 				bulletClone = Instantiate(bullet, shootPointRight.transform.position, shootPointRight.transform.rotation) as GameObject;
 				bulletClone.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;

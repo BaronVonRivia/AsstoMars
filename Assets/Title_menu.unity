@@ -177,13 +177,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1766732936}
-<<<<<<< HEAD
-  - {fileID: 2113973120}
-  - {fileID: 173845524}
-=======
   - {fileID: 173845524}
   - {fileID: 2113973120}
->>>>>>> test
   - {fileID: 1412382900}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -204,12 +199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c9895e6fcd8444d802e32d7702f333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startLevel: LevelTest
-<<<<<<< HEAD
-  levelSelect: 
-=======
+  startLevel: Level 1-1
   levelSelect: levelSelect
->>>>>>> test
 --- !u!1 &110963827
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,11 +287,7 @@ GameObject:
   - component: {fileID: 173845526}
   - component: {fileID: 173845525}
   m_Layer: 5
-<<<<<<< HEAD
-  m_Name: New Game (2)
-=======
   m_Name: Level Select
->>>>>>> test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,11 +305,7 @@ RectTransform:
   m_Children:
   - {fileID: 1061746098}
   m_Father: {fileID: 53057623}
-<<<<<<< HEAD
-  m_RootOrder: 2
-=======
   m_RootOrder: 1
->>>>>>> test
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -684,11 +667,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-<<<<<<< HEAD
   orthographic size: 159.79178
-=======
-  orthographic size: 5
->>>>>>> test
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -709,11 +688,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1118364963}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
   m_LocalPosition: {x: 489, y: -250, z: -10}
-=======
-  m_LocalPosition: {x: 0, y: 0, z: -10}
->>>>>>> test
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -880,7 +855,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-<<<<<<< HEAD
       - m_Target: {fileID: 0}
         m_MethodName: 
         m_Mode: 1
@@ -892,8 +866,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-=======
->>>>>>> test
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1766732938
@@ -941,11 +913,7 @@ GameObject:
   - component: {fileID: 2113973122}
   - component: {fileID: 2113973121}
   m_Layer: 5
-<<<<<<< HEAD
-  m_Name: New Game (1)
-=======
   m_Name: Quit Game
->>>>>>> test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -963,11 +931,7 @@ RectTransform:
   m_Children:
   - {fileID: 832853529}
   m_Father: {fileID: 53057623}
-<<<<<<< HEAD
-  m_RootOrder: 1
-=======
   m_RootOrder: 2
->>>>>>> test
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

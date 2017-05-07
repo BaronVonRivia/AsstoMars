@@ -9,6 +9,7 @@ public class SEnemy : MonoBehaviour {
 	public float rotationSpeed;
 	private bool searchingForPlayer = false;
 	public float updateRate = 2f;
+	public int damage = 60;
 
 	[System.Serializable]
 	public class SEnemyStats {
@@ -95,11 +96,10 @@ public class SEnemy : MonoBehaviour {
 		myTransform.position += (target.position - myTransform.position).normalized * moveSpeed * Time.deltaTime;
 
 	}
-	void OnTriggerEnter2D (Collider2D other) {
-			if (other.tag == "Player") {
-				Destroy (other.gameObject);
-				gm.StartCoroutine (gm._RespawnPlayer ());
-
+	void OnCollisionEnter2D(Collision2D _colInfo) {
+		Player _player = _colInfo.collider.GetComponent<Player> ();
+		if(_player != null) {
+			_player.DamagePlayer (damage);
 		}
 	}
 }

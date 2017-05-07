@@ -20,6 +20,8 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	private LifeManager lifesystem;
+
 	public PlayerStats stats = new PlayerStats ();
 	public Transform deathParticles;
 	public int fallBoundary = -20;
@@ -28,6 +30,8 @@ public class Player : MonoBehaviour {
 	private StatusIndicator statusIndicator; 	
 
 	void Start() {
+
+		lifesystem = FindObjectOfType<LifeManager> ();
 
 		stats.Init ();
 
@@ -49,6 +53,7 @@ public class Player : MonoBehaviour {
 		stats.curHealth -= damage;
 		if (stats.curHealth <= 0) {
 			GameMaster.KillPlayer (this);
+			//lifesystem.TakeLife ();
 		}
 
 		statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);

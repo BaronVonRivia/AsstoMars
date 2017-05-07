@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc8e3d8c4a827947b63ef2ee808467f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Testing
+  levelToLoad: 
 --- !u!212 &212751484138805780
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -7,9 +7,14 @@ public class GameMaster : MonoBehaviour {
 	public GameObject currentCheckpoint;
 	public AudioClip respawnAudio;
 	public static GameMaster gm;
-	//private Player player;				// player class call
+	private static int _remainingLives = 3;
+	public static int RemainingLives
+	{
+		get{return _remainingLives;}
+	}
 
 	void Start () {
+		_remainingLives = 3;
 		if (gm == null) {
 			gm = GameObject.FindGameObjectWithTag ("GM").GetComponent<GameMaster> ();
 		}
@@ -20,18 +25,36 @@ public class GameMaster : MonoBehaviour {
 	public float spawnDelay = 2f;
 	public Transform spawnPrefab;
 
+	[SerializeField]
+	private GameObject gameOverUI;
+
+	public void EndGame() 
+	{
+		Debug.Log ("game over");
+		gameOverUI.SetActive (true);
+	}
+
 	public IEnumerator _RespawnPlayer () {
 		yield return new WaitForSeconds (spawnDelay);
 		AudioSource.PlayClipAtPoint (respawnAudio, new Vector3 (spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z), 0.5f);
 		Instantiate (playerPrefab, currentCheckpoint.transform.position, currentCheckpoint.transform.rotation);
 		Transform clone = Instantiate (spawnPrefab, currentCheckpoint.transform.position, currentCheckpoint.transform.rotation);
 		Destroy (clone.gameObject, 1f);
-		//player.transform.position = currentCheckpoint.transform.position;	
 	}
 
 	public static void KillPlayer (Player player) {
+		Transform _clone = Instantiate (player.deathParticles, player.transform.position, Quaternion.identity);
+		Destroy (_clone.gameObject, 5f);
 		Destroy (player.gameObject);
-		gm.StartCoroutine (gm._RespawnPlayer());
+		_remainingLives--;
+
+		if(_remainingLives <= 0)
+		{
+			gm.EndGame ();
+		} else
+		{
+			gm.StartCoroutine (gm._RespawnPlayer());
+		}
 	}
 
 	public static void KillSEnemy (SEnemy senemy) {

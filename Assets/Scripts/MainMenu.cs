@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour {
@@ -8,11 +9,11 @@ public class MainMenu : MonoBehaviour {
 	public string levelSelect;
 
 	public void NewGame() {
-		Application.LoadLevel (startLevel); 	//Call's for the first level.
+		SceneManager.LoadScene (startLevel); 	//Call's for the first level.
 	}
 
 	public void LevelSelect() {
-		Application.LoadLevel (levelSelect);	//Load's selected level.
+		SceneManager.LoadScene (levelSelect);	//Load's selected level.
 	}
 
 	public void QuitGame() {

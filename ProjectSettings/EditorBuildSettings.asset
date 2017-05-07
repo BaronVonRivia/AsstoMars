@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/Level 1-2.unity
   - enabled: 1
     path: Assets/levelSelect.unity
+  - enabled: 1
+    path: Assets/EEBoss.unity

@@ -122,9 +122,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 0.2
-  rotationSpeed: 0.5
+  moveSpeed: 1
+  rotationSpeed: 0
   updateRate: 2
+  damage: 60
   senemyStats:
     Health: 40
   deathParticles: {fileID: 4563421070732064, guid: b2d7286ad11548341a81280a8f4497b1,

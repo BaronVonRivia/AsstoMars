@@ -7,14 +7,14 @@ public class GameMaster : MonoBehaviour {
 	public GameObject currentCheckpoint;
 	public AudioClip respawnAudio;
 	public static GameMaster gm;
-	private static int _remainingLives = 3;
+	private static int _remainingLives = 2;
 	public static int RemainingLives
 	{
 		get{return _remainingLives;}
 	}
 
 	void Start () {
-		_remainingLives = 3;
+		_remainingLives = 2;
 		if (gm == null) {
 			gm = GameObject.FindGameObjectWithTag ("GM").GetComponent<GameMaster> ();
 		}
